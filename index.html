@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Sombrio - Servidor Vanilla</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-wrapper"></div>
+
+    <div class="site-content">
+        <header>
+            <div class="logo">RUST SOMBRIO</div>
+            <nav>
+                <a href="#"><i class="fa-solid fa-house"></i> Início</a>
+                <a href="#loja"><i class="fa-solid fa-cart-shopping"></i> Loja</a>
+                <a href="#"><i class="fa-brands fa-discord"></i> Discord</a>
+                <button class="btn-steam-icon"><i class="fa-brands fa-steam"></i> Login</button>
+            </nav>
+        </header>
+
+        <main class="container-principal">
+            
+            <aside class="sidebar-ranking">
+                <h3 class="ranking-header"><i class="fa-solid fa-trophy"></i> Top 10 Ranking</h3>
+                <ul class="lista-ranking">
+                    <li>
+                        <span class="pos-circulo">1</span>
+                        <span class="player-name">Chroma</span>
+                        <span class="player-points">34.927</span>
+                    </li>
+                    <li>
+                        <span class="pos-circulo">2</span>
+                        <span class="player-name">Fricke</span>
+                        <span class="player-points">32.012</span>
+                    </li>
+
+                    <li>
+                        <span class="pos-circulo">3</span>
+                        <span class="player-name">Lunaris</span>
+                        <span class="player-points">29.876</span>
+                    </li>
+
+                    <li>
+                        <span class="pos-circulo">4</span>
+                        <span class="player-name">ElBuch</span>
+                        <span class="player-points">27.543</span>
+                    </li>
+
+                    <li>
+                        <span class="pos-circulo">5</span>
+                        <span class="player-name">Javi</span>
+                        <span class="player-points">25.123</span>
+                    </li>
+
+                    </ul>
+                <button class="btn-ver-ranking">Ver Ranking Completo</button>
+                
+                <div style="margin-top: 15px; font-size: 12px; color: #888; text-align: center;">
+                    Servidor: <span style="color: var(--verde-sucesso);">● Online</span><br>
+                    Jogadores: 189/200
+                </div>
+            </aside>
+
+            <section class="conteudo-principal">
+                <div class="promocao-banner">
+                    <p style="color: var(--amarelo-ouro); font-weight: bold;">60% OFF!</p>
+                    <h1 class="titulo-sessao" style="font-size: 2.5rem; margin-bottom: 20px;">MEGA PROMOÇÃO NA LOJA</h1>
+                    <a href="#loja" class="btn-copy" style="text-decoration: none; background: white; color: var(--vermelho-rust); padding: 12px 25px;">
+                        GARANTIR MEU DESCONTO
+                    </a>
+                </div>
+
+                <div class="conectar-secao">
+                    <h2>Jogue Agora!</h2>
+                    <p>Abra o Rust, pressione <strong>F1</strong> e cole o comando abaixo:</p>
+                    <div class="comando-wrapper">
+                        <code class="comando-conectar" id="ip-servidor">client.connect 123.456.678.910:28015</code>
+                        <button class="btn-copy" onclick="copiarIP()">
+                            <i class="fa-solid fa-copy"></i> COPIAR COMANDO
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section class="regras-secao">
+            <h2><i class="fa-solid fa-scroll"></i> Regras do Servidor</h2>
+            <div class="grid-regras">
+                <div class="regra-item">
+                    <strong>1. Limite de Time (Máx 4)</strong>
+                    <p>Máximo de 4 jogadores juntos em bases ou raides. Regra estrita Vanilla.</p>
+                </div>
+                <div class="regra-item">
+                    <strong>2. Proibido Cheats/Hacks</strong>
+                    <p>Uso de scripts ou exploits resulta em banimento permanente imediato.</p>
+                </div>
+                <div class="regra-item">
+                    <strong>3. Sem Ofensas</strong>
+                    <p>Racismo, discriminação ou discurso de ódio não serão tolerados.</p>
+                </div>
+                <div class="regra-item">
+                    <strong>4. Proibido Divulgação</strong>
+                    <p>Não divulgue outros servidores ou serviços externos no chat.</p>
+                </div>
+                <div class="regra-item">
+                    <strong>5. Abuso de Bugs</strong>
+                    <p>Exploits para vantagem injusta resultam em punição severa.</p>
+                </div>
+                <div class="regra-item">
+                    <strong>6. Denúncias</strong>
+                    <p>Reporte jogadores no nosso Discord com provas de vídeo ou print.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="loja" class="loja-container">
+            <h1 class="titulo-sessao">PLANOS VIP</h1>
+            
+            <div class="vips-grid">
+                <div class="card-vip bronze">
+                    <h2>Bronze</h2>
+                    <div class="preco-box">
+                        <span class="valor">R$ 3,00</span>
+                        <span class="obs">por dia (24h)</span>
+                    </div>
+                    <ul class="beneficios-lista">
+                        <li><i class="fa-solid fa-check"></i> Coleta x1.3</li>
+                        <li><i class="fa-solid fa-check"></i> Kit Bronze Diário</li>
+                        <li><i class="fa-solid fa-check"></i> Tag [VIP] no Chat</li>
+                    </ul>
+                    <input type="number" class="input-dias" value="30">
+                    <button class="btn-block"><i class="fa-solid fa-lock"></i> Login para Comprar</button>
+                </div>
+
+                <div class="card-vip prata">
+                    <h2>Prata</h2>
+                    <div class="preco-box">
+                        <span class="valor">R$ 5,00</span>
+                        <span class="obs">por dia (24h)</span>
+                    </div>
+                    <ul class="beneficios-lista">
+                        <li><i class="fa-solid fa-check"></i> Coleta x1.5</li>
+                        <li><i class="fa-solid fa-check"></i> Fila Prioritária</li>
+                        <li><i class="fa-solid fa-check"></i> SkinBox Liberado</li>
+                    </ul>
+                    <input type="number" class="input-dias" value="30">
+                    <button class="btn-block"><i class="fa-solid fa-lock"></i> Login para Comprar</button>
+                </div>
+
+                <div class="card-vip ouro">
+                    <h2>Ouro</h2>
+                    <div class="preco-box">
+                        <span class="valor">R$ 8,00</span>
+                        <span class="obs">por dia (24h)</span>
+                    </div>
+                    <ul class="beneficios-lista">
+                        <li><i class="fa-solid fa-check"></i> Coleta x1.8</li>
+                        <li><i class="fa-solid fa-check"></i> Todos os Kits</li>
+                        <li><i class="fa-solid fa-check"></i> Fornalhas Rápidas</li>
+                    </ul>
+                    <input type="number" class="input-dias" value="30">
+                    <button class="btn-block"><i class="fa-solid fa-lock"></i> Login para Comprar</button>
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; padding: 60px 40px; color: #555; border-top: 1px solid #222; background: rgba(0,0,0,0.3);">
+            <p>&copy; 2026 Rust Sombrio. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        function copiarIP() {
+            const ipTexto = "client.connect 123.456.678.910:28015";
+            navigator.clipboard.writeText(ipTexto).then(() => {
+                // Pequeno feedback visual no alert
+                alert("✅ Comando copiado! Agora é só colar no F1 do Rust.");
+            });
+        }
+    </script>
+</body>
+</html>

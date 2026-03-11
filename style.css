@@ -1,0 +1,322 @@
+/* ============================================================
+   RUST SOMBRIO - PROJETO v1.0 
+    Desenvolvido por Fricke337
+   ============================================================ */
+
+:root {
+    --vermelho-rust: #d32f2f;
+    --vermelho-hover: #ff1744;
+    --preto-cards: #111111;
+    --cinza-texto: #bdbdbd;
+    --amarelo-ouro: #ffd600;
+    --verde-sucesso: #00c853;
+    --bronze: #cd7f32;
+    --prata: #c0c0c0;
+}
+
+html { scroll-behavior: smooth; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+}
+
+.background-wrapper {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-image: url('paisagemrust full.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+.site-content {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(10, 10, 10, 0.78);
+}
+
+header {
+    background: rgba(18, 18, 18, 0.98);
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--vermelho-rust);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--vermelho-rust);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(211, 47, 47, 0.3);
+    font-family: 'Oswald', sans-serif;
+}
+
+nav { display: flex; align-items: center; gap: 25px; }
+nav a {
+    color: var(--cinza-texto);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+nav a:hover { color: var(--vermelho-rust); }
+nav a i { color: var(--amarelo-ouro); }
+
+.btn-steam-icon {
+    background-color: var(--vermelho-rust);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+.btn-steam-icon:hover {
+    background-color: var(--vermelho-hover);
+    box-shadow: 0 0 15px rgba(211, 47, 47, 0.4);
+}
+
+.container-principal {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    max-width: 1120px;
+    margin: 50px auto;
+    padding: 0;
+}
+
+.sidebar-ranking {
+    width: 280px;
+    flex-shrink: 0;
+    background: rgba(20, 20, 20, 0.95);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #222;
+    border-left: 5px solid var(--vermelho-rust);
+    height: fit-content;
+}
+
+.conteudo-principal {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.promocao-banner {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    background: rgba(211, 47, 47, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px dashed var(--vermelho-rust);
+}
+
+.conectar-secao {
+    background: rgba(20, 20, 20, 0.85);
+    border-radius: 15px;
+    padding: 40px;
+    border: 1px solid #222;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+}
+
+.comando-wrapper {
+    background: #000;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.comando-conectar {
+    font-family: 'Consolas', monospace;
+    color: var(--verde-sucesso);
+    font-size: 1.1rem;
+}
+
+.btn-copy {
+    background: var(--verde-sucesso);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-copy:hover { transform: scale(1.05); background: #00e676; }
+
+.lista-ranking { list-style: none; margin-top: 15px; }
+.lista-ranking li {
+    display: flex;
+    align-items: center;
+    padding: 12px 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 14px;
+}
+.ranking-header i { color: var(--amarelo-ouro); margin-right: 10px; }
+
+.pos-circulo {
+    width: 26px; height: 26px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-weight: bold;
+    font-size: 12px;
+}
+li:nth-child(1) .pos-circulo { background: var(--amarelo-ouro); color: black; }
+li:nth-child(2) .pos-circulo { background: var(--prata); color: black; }
+li:nth-child(3) .pos-circulo { background: var(--bronze); color: black; }
+
+.player-name { color: white; font-weight: 500; }
+.player-points { margin-left: auto; color: #ff5252; font-weight: bold; }
+
+.btn-ver-ranking {
+    width: 100%;
+    background: #1a1a1a;
+    color: var(--amarelo-ouro);
+    border: 1px solid #333;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn-ver-ranking:hover { border-color: var(--amarelo-ouro); background: #222; }
+
+.regras-secao {
+    max-width: 1120px;
+    margin: 60px auto;
+    padding: 40px;
+    background: rgba(15, 15, 15, 0.9);
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+.regras-secao h2 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--amarelo-ouro);
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+.grid-regras {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.regra-item {
+    background: rgba(0,0,0,0.3);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid var(--vermelho-rust);
+}
+.regra-item strong { color: white; display: block; margin-bottom: 5px; }
+.regra-item p { font-size: 13px; color: var(--cinza-texto); line-height: 1.5; }
+
+.loja-container { padding: 80px 30px; max-width: 1300px; margin: 0 auto; }
+.titulo-sessao {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+.vips-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.card-vip {
+    background: var(--preto-cards);
+    width: 350px;
+    padding: 40px 30px;
+    border-radius: 15px;
+    border: 1px solid #222;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+}
+.card-vip:hover { transform: translateY(-10px); border-color: #555; }
+
+.card-vip.bronze h2 { color: var(--bronze); }
+.card-vip.prata h2 { color: var(--prata); }
+.card-vip.ouro h2 { color: var(--amarelo-ouro); }
+
+.preco-box .valor {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--vermelho-rust);
+    display: block;
+}
+
+.beneficios-lista { list-style: none; text-align: left; margin: 25px 0; flex-grow: 1; }
+.beneficios-lista li { padding: 10px 0; color: #ccc; font-size: 14px; display: flex; align-items: center; gap: 10px; }
+.beneficios-lista i { color: var(--verde-sucesso); }
+
+.input-dias {
+    background: #000;
+    border: 1px solid #333;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.btn-block {
+    background: #1a1a1a;
+    color: var(--amarelo-ouro);
+    border: 1px solid var(--amarelo-ouro);
+    padding: 15px;
+    border-radius: 8px;
+    cursor: not-allowed;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+.btn-block:hover { background: var(--amarelo-ouro); color: black; }
