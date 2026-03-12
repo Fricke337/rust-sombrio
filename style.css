@@ -85,22 +85,52 @@ nav a {
 nav a:hover { color: var(--vermelho-rust); }
 nav a i { color: var(--amarelo-ouro); }
 
-.btn-steam-icon {
-    background-color: var(--vermelho-rust);
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 5px;
-    font-weight: bold;
+.btn-login {
+    transition: all 0.3s ease;
     cursor: pointer;
+}
+
+.btn-login:hover {
+    transform: scale(1.05); 
+    filter: brightness(1.2); 
+}
+
+.btn-login:active {
+    transform: scale(0.95); 
+}
+
+.btn-steam-icon {
+    background-color: #ce3232; 
+    color: #ffffff;
+    border: none;
+    border-radius: 6px; 
+    padding: 8px 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte limpa */
+    font-weight: 600;
+    font-size: 16px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    transition: 0.3s;
+    gap: 12px; 
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 0px #9e2626; 
 }
+
+
 .btn-steam-icon:hover {
-    background-color: var(--vermelho-hover);
-    box-shadow: 0 0 15px rgba(211, 47, 47, 0.4);
+    background-color: #e23a3a;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 0px #9e2626;
+}
+
+
+.btn-steam-icon:active {
+    transform: translateY(3px); 
+    box-shadow: 0 1px 0px #9e2626; 
+}
+
+.btn-steam-icon i {
+    font-size: 1.2rem; 
 }
 
 .container-principal {
