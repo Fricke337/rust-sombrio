@@ -20,7 +20,7 @@
                 <a href="#"><i class="fa-solid fa-house"></i> Início</a>
                 <a href="#loja"><i class="fa-solid fa-cart-shopping"></i> Loja</a>
                 <a href="#"><i class="fa-brands fa-discord"></i> Discord</a>
-                <button class="btn-steam-icon" onclick="alert('Sistema de Login via Steam em manutenção. Isso será corrigido nos próximos updates!')">
+                <button class="btn-steam-icon" onclick="loginSteam()">
                     <i class="fa-brands fa-steam"></i> Login
                 </button>
             </nav>
@@ -181,10 +181,12 @@
         function copiarIP() {
             const ipTexto = "client.connect 123.456.678.910:28015";
             navigator.clipboard.writeText(ipTexto).then(() => {
-                // Pequeno feedback visual no alert
                 alert("✅ Comando copiado! Agora é só colar no F1 do Rust.");
             });
         }
     </script>
+
+    <script src="js/script.js"></script>
+
 </body>
 </html>
