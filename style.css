@@ -295,7 +295,13 @@ li:nth-child(3) .pos-circulo { background: var(--bronze); color: black; }
     margin-bottom: 50px;
     text-transform: uppercase;
 }
-.vips-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.vips-grid { 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+
 .card-vip {
     background: var(--preto-cards);
     width: 350px;
@@ -305,42 +311,60 @@ li:nth-child(3) .pos-circulo { background: var(--bronze); color: black; }
     transition: 0.4s;
     display: flex;
     flex-direction: column;
+    text-align: center; /* Garante o alinhamento central */
 }
+
 .card-vip:hover { transform: translateY(-10px); border-color: #555; }
 
+/* Títulos coloridos */
 .card-vip.bronze h2 { color: var(--bronze); }
 .card-vip.prata h2 { color: var(--prata); }
 .card-vip.ouro h2 { color: var(--amarelo-ouro); }
 
+/* Caixa de Preço Unificada */
+.preco-box { margin-bottom: 10px; }
 .preco-box .valor {
     font-size: 3rem;
     font-weight: 800;
     color: var(--vermelho-rust);
     display: block;
 }
+.preco-box .obs { color: #888; font-size: 0.9rem; }
 
 .beneficios-lista { list-style: none; text-align: left; margin: 25px 0; flex-grow: 1; }
 .beneficios-lista li { padding: 10px 0; color: #ccc; font-size: 14px; display: flex; align-items: center; gap: 10px; }
 .beneficios-lista i { color: var(--verde-sucesso); }
 
-.input-dias {
-    background: #000;
+/* Input de Dias Padronizado */
+input[type="number"].input-dias {
+    background-color: #000; 
     border: 1px solid #333;
-    color: white;
+    color: #fff;
     padding: 12px;
     border-radius: 8px;
     width: 100%;
-    margin-bottom: 15px;
     text-align: center;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 15px;
+    outline: none;
+    -moz-appearance: textfield; /* Para Firefox */
 }
 
+/* Remove setinhas */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Botão Padronizado */
 .btn-block {
     background: #1a1a1a;
     color: var(--amarelo-ouro);
     border: 1px solid var(--amarelo-ouro);
     padding: 15px;
     border-radius: 8px;
-    cursor: not-allowed;
+    cursor: pointer; /* Mudei para pointer pois agora faz algo */
     font-weight: bold;
     text-transform: uppercase;
     display: flex;
@@ -348,5 +372,6 @@ li:nth-child(3) .pos-circulo { background: var(--bronze); color: black; }
     align-items: center;
     gap: 10px;
     transition: 0.3s;
+    width: 100%;
 }
 .btn-block:hover { background: var(--amarelo-ouro); color: black; }

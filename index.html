@@ -125,51 +125,51 @@
             <h1 class="titulo-sessao">PLANOS VIP</h1>
             
             <div class="vips-grid">
-                <div class="card-vip bronze">
-                    <h2>Bronze</h2>
-                    <div class="preco-box">
-                        <span class="valor">R$ 3,00</span>
-                        <span class="obs">por dia (24h)</span>
-                    </div>
-                    <ul class="beneficios-lista">
-                        <li><i class="fa-solid fa-check"></i> Coleta x1.3</li>
-                        <li><i class="fa-solid fa-check"></i> Kit Bronze Diário</li>
-                        <li><i class="fa-solid fa-check"></i> Tag [VIP] no Chat</li>
-                    </ul>
-                    <input type="number" class="input-dias" value="30">
-                    <button class="btn-block"><i class="fa-solid fa-lock"></i> Login para Comprar</button>
-                </div>
+    <div class="card-vip bronze">
+        <h2>Bronze</h2>
+        <div class="preco-box">
+            <span class="valor">R$ <span id="preco-bronze">90,00</span></span>
+            <span class="obs">por <span id="label-dias-bronze">30</span> dias</span>
+        </div>
+        <ul class="beneficios-lista">
+            <li><i class="fa-solid fa-check"></i> Coleta x1.3</li>
+            <li><i class="fa-solid fa-check"></i> Kit Bronze Diário</li>
+            <li><i class="fa-solid fa-check"></i> Tag [VIP] no Chat</li>
+        </ul>
+        <input type="number" id="dias-bronze" class="input-dias" value="30" min="1" oninput="calcularTotal('bronze')">
+        <button class="btn-block" onclick="loginSteam()"><i class="fa-solid fa-lock"></i> LOGIN PARA COMPRAR</button>
+    </div>
 
-                <div class="card-vip prata">
-                    <h2>Prata</h2>
-                    <div class="preco-box">
-                        <span class="valor">R$ 5,00</span>
-                        <span class="obs">por dia (24h)</span>
-                    </div>
-                    <ul class="beneficios-lista">
-                        <li><i class="fa-solid fa-check"></i> Coleta x1.5</li>
-                        <li><i class="fa-solid fa-check"></i> Fila Prioritária</li>
-                        <li><i class="fa-solid fa-check"></i> SkinBox Liberado</li>
-                    </ul>
-                    <input type="number" class="input-dias" value="30">
-                    <button class="btn-block"><i class="fa-solid fa-lock"></i> Login para Comprar</button>
-                </div>
+    <div class="card-vip prata">
+        <h2>Prata</h2>
+        <div class="preco-box">
+            <span class="valor">R$ <span id="preco-prata">150,00</span></span>
+            <span class="obs">por <span id="label-dias-prata">30</span> dias</span>
+        </div>
+        <ul class="beneficios-lista">
+            <li><i class="fa-solid fa-check"></i> Coleta x1.5</li>
+            <li><i class="fa-solid fa-check"></i> Fila Prioritária</li>
+            <li><i class="fa-solid fa-check"></i> SkinBox Liberado</li>
+        </ul>
+        <input type="number" id="dias-prata" class="input-dias" value="30" min="1" oninput="calcularTotal('prata')">
+        <button class="btn-block" onclick="loginSteam()"><i class="fa-solid fa-lock"></i> LOGIN PARA COMPRAR</button>
+    </div>
 
-                <div class="card-vip ouro">
-                    <h2>Ouro</h2>
-                    <div class="preco-box">
-                        <span class="valor">R$ 8,00</span>
-                        <span class="obs">por dia (24h)</span>
-                    </div>
-                    <ul class="beneficios-lista">
-                        <li><i class="fa-solid fa-check"></i> Coleta x1.8</li>
-                        <li><i class="fa-solid fa-check"></i> Todos os Kits</li>
-                        <li><i class="fa-solid fa-check"></i> Fornalhas Rápidas</li>
-                    </ul>
-                    <input type="number" class="input-dias" value="30">
-                    <button class="btn-block"><i class="fa-solid fa-lock"></i> Login para Comprar</button>
-                </div>
-            </div>
+    <div class="card-vip ouro">
+        <h2>Ouro</h2>
+        <div class="preco-box">
+            <span class="valor">R$ <span id="preco-ouro">240,00</span></span>
+            <span class="obs">por <span id="label-dias-ouro">30</span> dias</span>
+        </div>
+        <ul class="beneficios-lista">
+            <li><i class="fa-solid fa-check"></i> Coleta x1.8</li>
+            <li><i class="fa-solid fa-check"></i> Todos os Kits</li>
+            <li><i class="fa-solid fa-check"></i> Fornalhas Rápidas</li>
+        </ul>
+        <input type="number" id="dias-ouro" class="input-dias" value="30" min="1" oninput="calcularTotal('ouro')">
+        <button class="btn-block" onclick="loginSteam()"><i class="fa-solid fa-lock"></i> LOGIN PARA COMPRAR</button>
+    </div>
+</div>
         </section>
 
         <footer style="text-align: center; padding: 60px 40px; color: #555; border-top: 1px solid #222; background: rgba(0,0,0,0.3);">
